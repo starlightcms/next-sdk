@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="/website/static/img/sdk-header-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="/website/static/img/sdk-header.svg">
-  <img alt="Starlight Next SDK logo" src="/website/static/img/sdk-header.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="/assets/sdk-header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="/assets/sdk-header.svg">
+  <img alt="Starlight Next SDK logo" src="/assets/sdk-header.svg">
 </picture>
 
 # Starlight Next SDK

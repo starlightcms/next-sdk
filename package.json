@@ -1,6 +1,6 @@
 {
   "name": "@starlightcms/next-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Starlight SDK for Next",
   "main": "dist/cjs/index.js",
   "exports": {

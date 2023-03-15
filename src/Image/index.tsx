@@ -37,7 +37,7 @@ export const Image = ({
       : undefined
   }, [file, placeholder])
 
-  if (file.variation !== variation) {
+  if (variation && file.variation !== variation) {
     console.warn(
       `Starlight media file ${media.name}.${media.extension} has no "${variation}" variation. The "${file.variation}" variation was used instead.`
     )

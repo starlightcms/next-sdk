@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useMemo } from 'react'
 import { default as NextImage } from 'next/image'
 import { getMediaFile } from '@starlightcms/react-sdk'

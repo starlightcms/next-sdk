@@ -4,13 +4,17 @@
   "description": "The Starlight SDK for Next",
   "main": "dist/cjs/index.js",
   "exports": {
-    "require": "./dist/cjs/index.js",
-    "import": "./dist/esm/index.js"
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
+    },
+    "./styles.css": "./dist/styles.css"
   },
   "scripts": {
-    "build": "rimraf dist && npm run build:cjs && npm run build:esm",
+    "build": "rimraf dist && npm run build:cjs && npm run build:esm && npm run build:css",
     "build:esm": "tsc --module esnext --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:css": "copyfiles -f \"./node_modules/@starlightcms/react-sdk/dist/styles.*\" dist",
     "dev": "tsc --watch --module esnext --outDir dist/esm",
     "dev:cjs": "tsc --watch --module commonjs --outDir dist/cjs",
     "prepare": "husky install",
@@ -39,6 +43,7 @@
     "@types/react": "^18.3.27",
     "@typescript-eslint/eslint-plugin": "^8.49.0",
     "@typescript-eslint/parser": "^8.49.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^7.0.2",
@@ -54,7 +59,7 @@
     ]
   },
   "dependencies": {
-    "@starlightcms/react-sdk": "^3.1.0-beta.0"
+    "@starlightcms/react-sdk": "^3.1.0"
   },
   "peerDependencies": {
     "next": ">=13.0.0",

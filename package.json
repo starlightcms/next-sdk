@@ -59,7 +59,7 @@
     ]
   },
   "dependencies": {
-    "@starlightcms/react-sdk": "^3.1.0"
+    "@starlightcms/react-sdk": "^3.2.0"
   },
   "peerDependencies": {
     "next": ">=13.0.0",

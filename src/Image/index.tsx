@@ -39,7 +39,7 @@ export const Image = ({
       : undefined
   }, [file, placeholder])
 
-  if (variation && file?.variation !== variation) {
+  if (media && variation && file?.variation !== variation) {
     console.warn(
       `Starlight media file ${media.name}.${
         media.extension
@@ -49,7 +49,7 @@ export const Image = ({
     )
   }
 
-  return file ? (
+  return media && file ? (
     <NextImage
       src={file.path}
       width={file.meta?.width as number}

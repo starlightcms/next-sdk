@@ -31,21 +31,25 @@ export const Image = ({
   alt,
   placeholder,
   ...props
-}: ImageProps): JSX.Element => {
+}: ImageProps) => {
   const file = useMemo(() => getMediaFile(media, variation), [media, variation])
   const blurDataURL = useMemo(() => {
-    return placeholder === 'blur' && file.background_color
+    return placeholder === 'blur' && file && file.background_color
       ? rgbDataURL(file.background_color)
       : undefined
   }, [file, placeholder])
 
-  if (variation && file.variation !== variation) {
+  if (media && variation && file?.variation !== variation) {
     console.warn(
-      `Starlight media file ${media.name}.${media.extension} has no "${variation}" variation. The "${file.variation}" variation was used instead.`
+      `Starlight media file ${media.name}.${
+        media.extension
+      } has no "${variation}" variation. The "${
+        file?.variation ?? 'original'
+      }" variation was used instead.`
     )
   }
 
-  return (
+  return media && file ? (
     <NextImage
       src={file.path}
       width={file.meta?.width as number}
@@ -55,5 +59,5 @@ export const Image = ({
       blurDataURL={blurDataURL}
       {...props}
     />
-  )
+  ) : null
 }
